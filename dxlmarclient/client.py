@@ -367,7 +367,7 @@ class MarClient(Client):
                     raise Exception(
                         error["message"] + ": " + str(error["code"]))
                 if "body" in resp_dict:
-                    raise Exception(resp_dict["body"] + ": " + str(code))
+                    raise Exception(str(resp_dict["body"]) + ": " + str(code))
 
                 raise Exception(
                     "Error: Received failure response code: " + str(
@@ -487,7 +487,7 @@ class ResultsContext(object):
 
                 # Display items
                 for item in results["items"]:
-                    print "    " + item["output"]["Processes|name"]
+                    print("    " + item["output"]["Processes|name"])
 
         :param offset: (optional) Index of the first result item to be returned.
             This value is ``0`` based. Default value: ``0``

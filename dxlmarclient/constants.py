@@ -152,18 +152,18 @@ class ResultConstants(object):
             .. code-block:: python
 
                 search_result = result_context.get_results(limit=10)
-                print "Total items: " + str(search_result["totalItems"])
+                print("Total items: " + str(search_result["totalItems"]))
                 for item in search_result["items"]:
-                    print "    " + item["output"]['HostInfo|ip_address']
+                    print("    " + item["output"]['HostInfo|ip_address'])
 
         Can be rewritten to use :class:`ResultConstants` as follows:
 
             .. code-block:: python
 
                     search_result = result_context.get_results(limit=10)
-                    print "Total items: " + str(search_result[ResultConstants.TOTAL_ITEMS])
+                    print("Total items: " + str(search_result[ResultConstants.TOTAL_ITEMS]))
                     for item in search_result[ResultConstants.ITEMS]:
-                        print "    " + item[ResultConstants.ITEM_OUTPUT]['HostInfo|ip_address']
+                        print("    " + item[ResultConstants.ITEM_OUTPUT]['HostInfo|ip_address'])
     """
     CURRENT_ITEM_COUNT = "currentItemCount"
     TOTAL_ITEMS = "totalItems"
